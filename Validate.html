@@ -1,0 +1,55 @@
+function validateForm()
+{
+
+
+//First Name must be filled out--------------------------------------------------
+var FirstName=document.forms["myForm"]["FirstName"].value;
+
+if (FirstName==null || FirstName=="")
+  {
+  alert("First name must be filled out.");
+  return false;
+  }
+
+//Last Name must be filled out-------------------------------------------------
+var LastName=document.forms["myForm"]["LastName"].value;
+
+if (LastName==null || LastName=="")
+  {
+  alert("Last name must be filled out.");
+  return false;
+  }
+  
+ //Email must be correct----------------------------------------------------------
+var Email=document.forms["myForm"]["Email"].value;
+var atpos=Email.indexOf("@");
+var dotpos=Email.lastIndexOf(".");
+
+if (atpos<1 || dotpos<atpos+2 || dotpos+2>=Email.length)
+  {
+  alert("Not a valid e-mail address.");
+  return false;
+  }
+
+
+//Purpose option must be selected--------------------------------------------------
+var Purpose=document.forms["myForm"]["Purpose"].value;
+
+if (Purpose=="choose")
+                {
+                alert("You must choose the purpose of your message.");
+                return false;
+                }
+
+//Message box
+var Message=document.forms["myForm"]["Message"].value;
+
+if (Message==null || Message=="")
+                {
+                alert("Please type your message.");
+                return false;
+                }
+
+
+  
+}
